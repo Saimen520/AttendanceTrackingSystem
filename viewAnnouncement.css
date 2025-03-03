@@ -1,0 +1,246 @@
+/* viewAnnouncement.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f0f0f0, #ffffff);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #004080;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+
+/* No announcements message */
+.no-announcements {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Announcements list */
+.announcements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.announcement-item {
+    background: white;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Make the box full width */
+    max-width: 800px; /* Set a max-width for better readability */
+    margin: 0 auto 25px; /* Center the box */
+}
+
+.announcement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+.announcement-title {
+    font-size: 1.5rem;
+    color: #004080;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-decoration: underline; /* Add underline to title */
+    text-decoration-color: #004080; /* Match underline color with title */
+    text-underline-offset: 4px; /* Space between text and underline */
+}
+
+.announcement-message {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.announcement-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.announcement-meta strong {
+    color: #333;
+}
+
+.announcement-document {
+    display: inline-block;
+    color: #3498db;
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: 1px solid #3498db;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+    cursor: pointer; /* Add pointer cursor */
+}
+
+.announcement-document:hover {
+    background: #3498db;
+    color: white;
+    text-decoration: underline; /* Add underline on hover */
+    text-underline-offset: 3px; /* Space between text and underline */
+}
+
+.attachment{
+    margin-bottom: 10px;
+}
+
+/* Custom styles for pagination buttons */
+.pagination {
+    display: flex;
+    justify-content:left;
+    gap: 10px;
+   
+}
+
+.pagination-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* Remove underline from links */
+    margin-bottom: 20px;
+}
+
+/* Previous Button */
+.previous-button {
+    background-color: #6c757d; /* Gray background */
+    color: white;
+}
+
+.previous-button:hover:not(.disabled) {
+    background-color: #5a6268; /* Darker gray on hover */
+}
+
+/* Next Button */
+.next-button {
+    background-color: #28a745; /* Green background */
+    color: white;
+}
+
+.next-button:hover:not(.disabled) {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Disabled State */
+.pagination-button.disabled {
+    background-color: #e9ecef; /* Light gray for disabled state */
+    color: #6c757d; /* Gray text */
+    cursor: not-allowed; /* Disable pointer */
+}
+/* Style for the Delete button */
+.delete-btn {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 16px; /* Padding */
+    font-size: 14px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin-bottom: 25px;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .no-announcements {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .announcement-item {
+        padding: 20px;
+    }
+
+    .announcement-title {
+        font-size: 1.3rem;
+    }
+
+    .announcement-message {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    .no-announcements {
+        font-size: 1rem;
+    }
+
+    .announcement-document {
+        width: 100%;
+        text-align: center;
+    }
+}
